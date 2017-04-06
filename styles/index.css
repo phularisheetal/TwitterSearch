@@ -1,0 +1,167 @@
+/* GLOBAL STYLES */
+
+body {
+  color: #fff;
+  font-family: monospace;
+  overflow: auto;
+
+}
+
+.grid {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top:0;
+  left: 0;
+}
+.row {
+font-family: 'Robotics';
+}
+.loader {
+  position: absolute;
+  left: 40%;
+  top:35%;
+
+}
+
+
+.container {
+  width: 20%;
+   height: 100%;
+   float: left;
+   position: relative;
+   -webkit-perspective: 800px;
+   -moz-perspective: 800px;
+   -o-perspective: 800px;
+   perspective: 800px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+
+.card div.front, .card div.back{
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front,.back {
+  display: flex;
+  align-items: center;
+}
+.back {
+    background: black;
+    display:flex;
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+.dp,.userDetails div,.userDetails .user-name {
+  position: absolute;
+}
+
+.dp {
+  top:10px;
+ right:10px;
+}
+
+.userDetails div {
+  bottom: 10px;
+  left: 10px;
+}
+
+.userDetails .user-name{
+  top:0;
+  left: 10px;
+}
+
+
+.cardFlipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.userName {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  line-height: 30px;
+  font-size: 1.5em;
+  font-family: Roboto, sans-serif;
+  animation:
+    typing 6s steps(30, end) infinite,
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  1% { border-color: white; }
+}
+
+
+@media only screen and (max-width : 480px) {
+   /* Smartphone view: 1 tile */
+   .container {
+      width: 100vw;
+      height: 30vh;
+      will-change: transform, opacity;
+
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   /* Tablet view: 2 tiles */
+   .container {
+      width: 36.5 vw;
+      height: 30vh;
+   }
+}
+
+
+.slideTop-enter {/*animation start state*/
+  height: 0px;
+}
+
+.slideTop-enter-active {/*/*animation end state*/
+  height: 100%;
+  transition:  .5s ease-in all;
+}
+
+.slideLeft-enter {/*animation start state*/
+  width: 0px;
+}
+
+.slideLeft-enter-active {/*/*animation end state*/
+  width: 20%;
+  transition:  .5s ease-in all;
+}

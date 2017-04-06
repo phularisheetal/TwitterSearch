@@ -1,0 +1,8 @@
+.fade-enter {/*animation start state*/
+  right: 100px;
+}
+
+.fade-enter-active {/*/*animation end state*/
+  right: 0px;
+  transition:  .5s ease-in all;
+}
